@@ -1,2 +1,2 @@
 echo "Nguyen Van Duong";
-echo str_word_count("hello world");
+echo "Xin chao ca nha!"
