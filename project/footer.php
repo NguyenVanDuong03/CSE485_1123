@@ -7,7 +7,7 @@
 </head>
 <body>
     <footer>
-        <p>&copy; 2023 Trang san pham</p>
+        <p>&copy; 2023 Trang san pham</p> 
     </footer>
 </body>
 </html>

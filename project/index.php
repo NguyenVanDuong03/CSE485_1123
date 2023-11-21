@@ -2,11 +2,14 @@
 <?php include 'products.php'; ?>
 <main>
  <h2>Danh Sách Sản Phẩm</h2>
-<?php if (empty($products)): ?>
+<?php
+$pr = $products;
+ if (empty($pr)):
+  ?>
  <p>Không có sản phẩm nào.</p>
 <?php else: ?>
  <ul>
-<?php foreach ($products as $product): ?>
+<?php foreach ($pr as $product): ?>
  <li><?= htmlspecialchars($product['name']) ?>: <?= htmlspecialchars($product['price']) ?> VND</li>
 <?php endforeach; ?>
  </ul>
