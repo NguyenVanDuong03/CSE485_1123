@@ -37,5 +37,6 @@ echo "\nTổng các phần tử = " . implode(" + ", $arrs) . " = " . Tong($arrs
 echo "\nTích các phần tử = " . implode(" * ", $arrs) . " = " . Tich($arrs) . "</br>";
 echo "\nHiệu các phần tử = " . implode(" - ", $arrs) . " = " . Hieu($arrs) . "</br>";
 echo "\nThương các phần tử = " . implode(" / ", $arrs) . " = " . Thuong($arrs) . "</br>";
+echo "Xin chao Son";
 
 
