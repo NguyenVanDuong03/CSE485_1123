@@ -73,7 +73,7 @@
         </select>
     </div>
 
-    <!-- htmlspecialchars - xóa ký tự đặc biệt -->
+    <!-- htmlspecialchars - ký tự đặc biệt sẽ chuyển thành ký tự để ko bị lỗi -->
     
 
     
