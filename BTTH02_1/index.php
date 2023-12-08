@@ -41,6 +41,7 @@
 	</form>		
 	<div id="showComments"></div>   
 </div>	
+
 		</main>
 		<footer>
 			<!-- place footer here -->

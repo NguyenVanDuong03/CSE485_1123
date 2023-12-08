@@ -1,26 +1,20 @@
 <?php
+include_once("db_connect.php");
 global $conn;
-require_once ("db_connect.php");
 if(!empty($_POST["name"]) && !empty($_POST["comment"])){
-    $insertComments = "INSERT INTO comment (parent_id, comment, sender) VALUES (:parent_id, :comment, :sender)";
-    $statement = $conn->prepare($insertComments);
-
-    // Bind parameters to the prepared statement
-    $statement->bindParam(':parent_id', $_POST["commentId"]);
-    $statement->bindParam(':comment', $_POST["comment"]);
-    $statement->bindParam(':sender', $_POST["name"]);
-    $statement->execute();
-    $message = '<label class="text-success">Comment posted Successfully.</label>';
-    $status = array(
-        'error'  => 0,
-        'message' => $message
-    );
+	$insertComments = "INSERT INTO comment (parent_id, comment, sender) VALUES ('".$_POST["commentId"]."', '".$_POST["comment"]."', '".$_POST["name"]."')";
+	mysqli_query($conn, $insertComments) or die("database error: ". mysqli_error($conn));	
+	$message = '<label class="text-success">Comment posted Successfully.</label>';
+	$status = array(
+		'error'  => 0,
+		'message' => $message
+	);	
 } else {
-    $message = '<label class="text-danger">Error: Comment not posted.</label>';
-    $status = array(
-        'error'  => 1,
-        'message' => $message
-    );
+	$message = '<label class="text-danger">Error: Comment not posted.</label>';
+	$status = array(
+		'error'  => 1,
+		'message' => $message
+	);	
 }
 echo json_encode($status);
 ?>
