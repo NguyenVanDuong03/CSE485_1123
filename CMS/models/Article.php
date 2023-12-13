@@ -7,6 +7,8 @@ class Article
     private $title;
     private $content;
 
+    private $db;
+
     public function __construct()
     {
         // Initialize database connection
@@ -19,7 +21,7 @@ class Article
         $db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $query = $db->query('SELECT * FROM articles');
+        $query = $db->query('SELECT * FROM articles ORDER BY id DESC');
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -40,9 +42,29 @@ class Article
         $this->title = $title;
     }
 
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
     public function setContent($content)
     {
         $this->content = $content;
+    }
+
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 
     public function save()

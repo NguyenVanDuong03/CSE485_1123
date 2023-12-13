@@ -44,7 +44,11 @@ class ArticleController
         $id = $_POST['id'];
         $title = $_POST['title'];
         $content = $_POST['content'];
-
+        // $obj = new Article();
+        // $obj->setId($id);
+        // $obj->setTitle($title);
+        // $obj->setContent($content);
+        // $obj->save();
         $article = Article::getById($id);
         $article->setTitle($title);
         $article->setContent($content);
