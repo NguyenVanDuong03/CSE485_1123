@@ -44,15 +44,15 @@ class ArticleController
         $id = $_POST['id'];
         $title = $_POST['title'];
         $content = $_POST['content'];
-        // $obj = new Article();
-        // $obj->setId($id);
-        // $obj->setTitle($title);
-        // $obj->setContent($content);
-        // $obj->save();
-        $article = Article::getById($id);
-        $article->setTitle($title);
-        $article->setContent($content);
-        $article->save();
+        $obj = new Article();
+        $obj->setId($id);
+        $obj->setTitle($title);
+        $obj->setContent($content);
+        $obj->update();
+        // $article = Article::getById($id);
+        // $article->setTitle($title);
+        // $article->setContent($content);
+        // $article->save();
 
         header('Location: index.php?controller=article&action=index');
     }
@@ -61,8 +61,11 @@ class ArticleController
     public function delete()
     {
         $id = $_GET['id'];
-        $article = Article::getById($id);
-        $article->delete();
+        // $article = Article::getById($id);
+        // $article->delete();
+        $obj = new Article();
+        $obj->setId($id);
+        $obj->delete();
 
         header('Location: index.php?controller=article&action=index');
     }

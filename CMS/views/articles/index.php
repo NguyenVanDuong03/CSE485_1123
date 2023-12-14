@@ -27,7 +27,7 @@
           <tr>
             <th scope="row"><?php echo $article['id']; ?></th>
             <td><?php echo $article['title']; ?></td>
-            <td>
+            <td class="d-flex justify-content-around">
                 <a href="index.php?controller=article&action=edit&id=<?php echo $article['id']; ?>"><i class="bi bi-pencil-square"></i></a>
                 <a href="index.php?controller=article&action=delete&id=<?php echo $article['id']; ?>"><i class="bi bi-trash3"></i></a>
             </td>
